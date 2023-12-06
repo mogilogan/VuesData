@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
-import styled from "styled-components";
+
 
 import Vid from "../../assets/try3.gif";
 
@@ -12,7 +12,7 @@ const container = {
   show: {
     opacity: 1,
     transition: {
-      delayChildren: 5, // 2
+     
       staggerChildren: 0.3,
     },
   },
@@ -23,11 +23,6 @@ const item = {
   show: { opacity: 1 },
 };
 
-const Img = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
 
 const CoverVideo = () => {
   return (
@@ -132,7 +127,7 @@ const CoverVideo = () => {
         </motion.h3>
       </motion.div>
 
-      <Img src={Vid}   autoPlay muted loop />
+      <img className="w-[100%] h-[100%] object-cover" src={Vid}   autoPlay muted loop />
       
     </section>
   );

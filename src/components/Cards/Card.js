@@ -49,11 +49,11 @@ const SquishyCard = ({
       className={`relative t h-96 w-80 cards shrink-0 min-w-[80%] max-w-[80%]   rounded-xl p-8`}
     >
       <div className="relative z-10 text-white ">
-        <div class="dropdown">
-          <button class="dropbtn bg-red-500 px-4 py-4 rounded-lg">
+        <div className="dropdown">
+          <button className="dropbtn bg-red-500 px-4 py-4 rounded-lg">
             PRICES
           </button>
-          <div class="dropdown-content px-4 py-4">
+          <div className="dropdown-content px-4 py-4">
             <p href="#">{free}</p>
             <p href="#">{pro}</p>
             <p href="#">{ultra}</p>

@@ -1,37 +1,10 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 
-const Container = styled.div`
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  z-index: 6;
 
-  width: 100%;
-  width: fit-content;
 
-  a {
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-  }
 
-  svg {
-    width: 4rem;
-
-    height: auto;
-    overflow: visible;
-    stroke-linejoin: round;
-    stroke-linecap: round;
-    g {
-      path {
-        stroke: #fff;
-      }
-    }
-  }
-`;
 
 
 const pathVariants = {
@@ -69,8 +42,9 @@ const textVariants = {
 
 const Logo = () => {
   return (
-    <Container>
-      <Link to="/">
+ 
+    <div className='absolute top-[1rem] left-[1rem] z-[6] w-[100%] w-fit'>
+      <Link className='w-[100%] flex items-end' to="/">
         {/* <img src={star} alt="Wibe Fashion" /> */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -79,9 +53,11 @@ const Logo = () => {
           viewBox="0 0 24 24"
           width="48px"
           fill="none"
+          className='strokedsvg'
         >
-          <g>
+          <g >
             <motion.path
+            className='stroke-[#fff]'
               variants={pathVariants}
               initial="hidden"
               animate="visible"
@@ -93,9 +69,10 @@ const Logo = () => {
         <span className='pb-[0.5rem] text-xl text-gray-200' variants={textVariants} initial="hidden" animate="visible">
           Vues Data
         </span>
-        
       </Link>
-    </Container>
+     
+    </div>
+   
   );
 };
 
