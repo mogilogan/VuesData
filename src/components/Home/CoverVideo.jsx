@@ -2,96 +2,11 @@ import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 
-import Vid from "../assets/try3.gif";
+import Vid from "../../assets/try3.gif";
 
-const VideoContainer = styled.section`
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  video {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
 
-    @media (max-width: 48em) {
-      object-position: center 10%;
-    }
-    @media (max-width: 30em) {
-      object-position: center 50%;
-    }
-  }
-`;
 
-const DarkOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  background-color: ${(props) => `rgba(${props.theme.bodyRgba},0.6)`};
-`;
 
-const Title = styled(motion.div)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 5;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: ${(props) => props.theme.text};
-
-  div {
-    display: flex;
-    flex-direction: row;
-  }
-
-  h1 {
-    font-family: "Kaushan Script";
-    font-size: ${(props) => props.theme.fontBig};
-
-    text-shadow: 1px 1px 1px ${(props) => props.theme.body};
-
-    @media (max-width: 30em) {
-      /* font-size: ${(props) => props.theme.fontxxxl}; */
-      font-size: calc(5rem + 8vw);
-    }
-  }
-  h2 {
-    font-size: ${(props) => props.theme.fontlg};
-    font-family: "Sirin Stencil";
-    font-weight: 500;
-    text-shadow: 1px 1px 1px ${(props) => props.theme.body};
-    margin: 0 auto;
-
-    text-transform: capitalize;
-
-    @media (max-width: 30em) {
-      font-size: ${(props) => props.theme.fontmd};
-      /* font-size: calc(5rem + 8vw); */
-      margin-top: -1.5rem;
-    }
-    h3 {
-      font-size: ${(props) => props.theme.fontlg};
-      font-family: "Sirin Stencil";
-      font-weight: 500;
-      text-shadow: 1px 1px 1px ${(props) => props.theme.body};
-      margin: 0 auto;
-  
-      text-transform: capitalize;
-  
-      @media (max-width: 30em) {
-        font-size: ${(props) => props.theme.fontmd};
-        /* font-size: calc(5rem + 8vw); */
-        margin-top: -0.5rem;
-      }
-  }
-`;
 
 const container = {
   hidden: { opacity: 0 },
@@ -117,16 +32,17 @@ const Img = styled.img`
 
 const CoverVideo = () => {
   return (
-    <VideoContainer data-scroll>
-      <DarkOverlay />
+    <section className="w-[100%] h-[100vh] relative " data-scroll>
+      <div className="absolute top-0 left-0 right-0 bottom-0 z-[1] bg-[rgba(71,69,69,0.49)]"></div>
 
-      <Title variants={container} initial="hidden" animate="show">
-        <div>
+      <motion.div className="flex flex-col justify-center items-center absolute top-0 left-0 right-0 bottom-0 z-[5]" variants={container} initial="hidden" animate="show">
+        <div className="flex flex-row  ">
           <motion.h1
             variants={item}
             data-scroll
             data-scroll-delay="0.21"
             data-scroll-speed="4"
+            className="font-mono text-5xl md:text-[80px]  drop-shadow  "
           >
             V
           </motion.h1>
@@ -135,6 +51,7 @@ const CoverVideo = () => {
             data-scroll
             data-scroll-delay="0.19"
             data-scroll-speed="4"
+            className="font-mono text-5xl md:text-[80px]  drop-shadow  "
           >
             u
           </motion.h1>
@@ -143,6 +60,7 @@ const CoverVideo = () => {
             data-scroll
             data-scroll-delay="0.17"
             data-scroll-speed="4"
+            className="font-mono text-5xl md:text-[80px] drop-shadow  "
           >
             e
           </motion.h1>
@@ -151,6 +69,7 @@ const CoverVideo = () => {
             data-scroll
             data-scroll-delay="0.15"
             data-scroll-speed="4"
+            className="font-mono text-5xl md:text-[80px]  drop-shadow  "
           >
             s
           </motion.h1>
@@ -159,6 +78,7 @@ const CoverVideo = () => {
             data-scroll
             data-scroll-delay="0.13"
             data-scroll-speed="4"
+            className="font-mono text-5xl md:text-[80px]  drop-shadow  "
           >
             d
           </motion.h1>
@@ -167,6 +87,7 @@ const CoverVideo = () => {
             data-scroll
             data-scroll-delay="0.09"
             data-scroll-speed="4"
+            className="font-mono text-5xl md:text-[80px] drop-shadow  "
           >
             a
           </motion.h1>
@@ -175,6 +96,7 @@ const CoverVideo = () => {
             data-scroll
             data-scroll-delay="0.06"
             data-scroll-speed="4"
+            className="font-mono text-5xl md:text-[80px]  drop-shadow  "
           >
             t
           </motion.h1>
@@ -183,6 +105,7 @@ const CoverVideo = () => {
             data-scroll
             data-scroll-delay="0.04"
             data-scroll-speed="4"
+            className="font-mono text-5xl md:text-[80px]  drop-shadow  "
           >
             a
           </motion.h1>
@@ -193,6 +116,7 @@ const CoverVideo = () => {
           data-scroll
           data-scroll-delay="0.04"
           data-scroll-speed="2"
+          className="text-center"
         >
           Web. Data. Domination.
         </motion.h2>
@@ -205,11 +129,11 @@ const CoverVideo = () => {
         >
           Unlock the power of the web with our cutting-edge web scraping technology.
         </motion.h3>
-      </Title>
+      </motion.div>
 
       <Img src={Vid}   autoPlay muted loop />
       
-    </VideoContainer>
+    </section>
   );
 };
 

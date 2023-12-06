@@ -2,24 +2,23 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 import LocomotiveScroll from "locomotive-scroll";
-import 'locomotive-scroll/dist/locomotive-scroll.css';
+import "locomotive-scroll/dist/locomotive-scroll.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function useLocoScroll() {
   useEffect(() => {
-
     const scrollEl = document.querySelector(".App");
 
     let locoScroll = new LocomotiveScroll({
       el: scrollEl,
       smooth: true,
       mobile: {
-        smooth: false
-    },
-    tablet: {
-        smooth: false
-    }
+        smooth: false,
+      },
+      tablet: {
+        smooth: false,
+      },
     });
 
     locoScroll.on("scroll", ScrollTrigger.update);
@@ -38,11 +37,11 @@ export default function useLocoScroll() {
           top: 0,
           left: 0,
           width: window.innerWidth,
-          height: window.innerHeight
+          height: window.innerHeight,
         };
       },
 
-      pinType: scrollEl.style.transform ? "transform" : "fixed"
+      pinType: scrollEl.style.transform ? "transform" : "fixed",
     });
 
     const lsUpdate = () => {
@@ -54,7 +53,6 @@ export default function useLocoScroll() {
     ScrollTrigger.addEventListener("refresh", lsUpdate);
 
     ScrollTrigger.refresh();
-
 
     return () => {
       if (locoScroll) {

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Card from "./Card";
-import Navbar from "../Navbar";
 
 import { apis } from "./CardsData";
 const Cards = () => {

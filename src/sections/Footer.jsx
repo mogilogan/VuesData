@@ -1,116 +1,12 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
-import styled from "styled-components";
+
 
 import Logo from "../assets/Svgs/star_white_48dp.svg";
 
 
 
-const Section = styled.section`
-  min-height: 100vh;
-  width: 100%;
-  /* margin: 5rem auto; */
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow-x: hidden;
-
-
-  background-color: ${(props) => props.theme.body};
-  color: ${(props) => props.theme.text};
-
-  position: relative;
-`;
-
-const LogoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    width: 10vw;
-    height: auto;
-  }
-
-  h3 {
-    font-family: "Kaushan Script";
-    font-size: ${(props) => props.theme.fontxxl};
-
-    @media (max-width: 48em) {
-      font-size: ${(props) => props.theme.fontxl};
-    }
-  }
-`;
-
-const FooterComponent = styled(motion.footer)`
-  width: 80vw;
-
-  @media (max-width: 48em) {
-    width: 90vw;
-  }
-  ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 2rem;
-    margin-top: 4rem;
-    padding: 0 1rem;
-    border-top: 1px solid ${(props) => props.theme.text};
-    border-bottom: 1px solid ${(props) => props.theme.text};
-
-    @media (max-width: 48em) {
-      justify-content: center;
-    }
-  }
-
-  li {
-    padding: 2rem;
-    font-size: ${(props) => props.theme.fontlg};
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    &:hover {
-      transform: scale(1.1);
-    }
-
-    @media (max-width: 48em) {
-      padding: 1rem;
-      font-size: ${(props) => props.theme.fontmd};
-    }
-  }
-`;
-
-const Bottom = styled.div`
-  padding: 0.5rem 0;
-  margin: 0 4rem;
-  font-size: ${(props) => props.theme.fontlg};
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  a {
-    text-decoration: underline;
-  }
-
-  @media (max-width: 64em) {
-    flex-direction: column;
-    justify-content: center;
-    span {
-      transform: none !important;
-    }
-  }
-
-  @media (max-width: 48em) {
-    font-size: ${(props) => props.theme.fontmd};
-  }
-`;
 
 const Footer = () => {
   const { scroll } = useLocomotiveScroll();
@@ -126,8 +22,8 @@ const Footer = () => {
   };
 
   return (
-    <Section>
-      <LogoContainer>
+    <section className="min-h-screen w-full flex flex-col justify-center items-center overflow-x-hidden relative bg-[#64401e]">
+      <div className="flex flex-col justify-center items-center">
         <img
           width="300"
           height="300"
@@ -135,36 +31,38 @@ const Footer = () => {
           alt="Wibe"
           data-scroll
           data-scroll-speed="2"
+          className="w-[10vw] h-auto "
         />
         <h3 data-scroll data-scroll-speed="-1">
           Vues Data
         </h3>
-      </LogoContainer>
-      <FooterComponent
+      </div>
+      <motion.div
         initial={{ y: "-400px" }}
         whileInView={{ y: 0 }}
         viewport={{ once: false }}
         transition={{
           duration: 1.5,
         }}
+        className="w-[80vw]"
       >
-        <ul>
-          <li aria-hidden="true" onClick={() => handleScroll("#home")}>
+        <ul className="[list-style:none] flex justify-between border-t-[1px] border-b-[1px] items-center flex-wrap m-8 mt-16 px-4 py-[0]">
+          <li className="footerli" aria-hidden="true" onClick={() => handleScroll("#home")}>
             home
           </li>
-          <li aria-hidden="true" onClick={() => handleScroll("#about")}>
+          <li className="footerli" aria-hidden="true" onClick={() => handleScroll("#about")}>
             about
           </li>
-          <li aria-hidden="true" onClick={() => handleScroll("#shop")}>
+          <li className="footerli" aria-hidden="true" onClick={() => handleScroll("#shop")}>
             apis
           </li>
-          <li aria-hidden="true" onClick={() => window.open("https://vuesdata.github.io/#introductions", "_blank")}>
+          <li className="footerli" aria-hidden="true" onClick={() => window.open("https://vuesdata.github.io/#introductions", "_blank")}>
             documentation
           </li>
          
          
         </ul>
-        <Bottom>
+        <div className="px-[0] py-2 mx-16 my-[0] flex justify-between items-center">
           <span
             data-scroll
             data-scroll-speed="2"
@@ -180,6 +78,7 @@ const Footer = () => {
           >
           
             <a
+            className="underline"
               href="#"
               target={"_blank"}
               rel="dofollow noreferrer"
@@ -187,9 +86,9 @@ const Footer = () => {
               LO
             </a>
           </span>
-        </Bottom>
-      </FooterComponent>
-    </Section>
+        </div>
+      </motion.div>
+    </section>
   );
 };
 
