@@ -32,11 +32,7 @@ const Container = styled.div`
     }
   }
 `;
-const Text = styled(motion.span)`
-  font-size: ${(props) => props.theme.fontlg};
-  color: ${(props) => props.theme.text};
-  padding-bottom: 0.5rem;
-`;
+
 
 const pathVariants = {
   hidden: {
@@ -94,9 +90,9 @@ const Logo = () => {
           </g>
         </svg>
 
-        <Text variants={textVariants} initial="hidden" animate="visible">
+        <span className='pb-[0.5rem] text-xl text-gray-200' variants={textVariants} initial="hidden" animate="visible">
           Vues Data
-        </Text>
+        </span>
         
       </Link>
     </Container>

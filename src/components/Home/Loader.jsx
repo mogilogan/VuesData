@@ -77,16 +77,7 @@ const textVariants = {
   },
 };
 
-const Text = styled(motion.span)`
-  font-size: ${(props) => props.theme.fontxl};
-  color: ${(props) => props.theme.text};
-  padding-top: 0.5rem;
 
-  @media (max-width: 48em) {
-    font-size: ${(props) => props.theme.fontlg};
-
-  }
-`;
 
 const Loader = () => {
   return (
@@ -95,7 +86,7 @@ const Loader = () => {
       exit={{ y: '100%', opacity: 0 }}
       transition={{ duration: 2 }}
     >
-      {/* <img src={star} alt="Wibe Fashion" /> */}
+  
       <svg
         xmlns="http://www.w3.org/2000/svg"
         enableBackground="new 0 0 24 24"
@@ -113,9 +104,9 @@ const Loader = () => {
           />
         </g>
       </svg>
-      <Text variants={textVariants} initial="hidden" animate="visible">
+      <span className='text-white font-lucky  text-md md:text-2xl' variants={textVariants} initial="hidden" animate="visible">
         Vues Data
-      </Text>
+      </span>
     </Container>
   );
 };
