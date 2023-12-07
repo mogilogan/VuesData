@@ -12,6 +12,7 @@ import Footer from "./sections/Footer";
 import Home from "./sections/Home";
 
 import Cards from "./components/Cards/Cards";
+import Review from "./components/Review/Review";
 
 function App() {
   // useLocoScroll();
@@ -29,7 +30,7 @@ function App() {
               <main className="App" data-scroll-container ref={containerRef}>
                 <AnimatePresence>
                   <Home key="home" />
-
+                  <Review />
                   <Footer key="Footer" />
                 </AnimatePresence>
               </main>

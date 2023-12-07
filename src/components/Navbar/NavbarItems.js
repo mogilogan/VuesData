@@ -72,7 +72,7 @@ const Navbar = ({ isToggled }) => {
             key={key}
           >
             <Link to={`${item.url}`}>
-              <p>{item.name}</p>
+              <p className="hover:text-red-800">{item.name}</p>
             </Link>
           </motion.li>
         ))}

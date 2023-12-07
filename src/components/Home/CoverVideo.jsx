@@ -30,7 +30,7 @@ const CoverVideo = () => {
 
       <div className="absolute top-0 left-0 right-0 bottom-0 z-[1] bg-[rgba(71,69,69,0.49)]"></div>
 
-      <motion.div className="flex flex-col justify-center items-center absolute top-0 left-0 right-0 bottom-0 z-[5]" variants={container} initial="hidden" animate="show">
+      <motion.div className="flex flex-col justify-center items-center absolute top-0 left-0 right-0 bottom-0 z-[5]"  viewport={{ once: true }} variants={container} initial="hidden" animate="show">
         <div className="flex flex-row gap-4 ">
           <motion.h1
             variants={item}

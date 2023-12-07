@@ -22,7 +22,7 @@ const Footer = () => {
   };
 
   return (
-    <section className="min-h-screen w-full flex flex-col justify-center items-center overflow-x-hidden relative bg-[#64401e]">
+    <section className="min-h-screen w-full flex flex-col justify-center text-white items-center overflow-x-hidden relative bg-slate-900">
       <div className="flex flex-col justify-center items-center">
         <img
           width="300"
